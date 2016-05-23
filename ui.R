@@ -2,6 +2,8 @@ library(shiny)
 
 shinyUI(
   fluidPage(
-    verbatimTextOutput("user")
+    h1("Test app"),
+    verbatimTextOutput("username"),
+    verbatimTextOutput("groups")
   )
 )
