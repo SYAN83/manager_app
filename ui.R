@@ -1,14 +1,16 @@
 library(shiny)
 
-shinyUI(fluidPage(
-  titlePanel("Client data and query string example"),
-  
-  fluidRow(
-    column(8,    
-           h3("session$clientdata values"),
-           verbatimTextOutput("summary"),
-           h3("Parsed URL query string"),
-           verbatimTextOutput("queryText")
-    )
+shinyUI(
+  fluidPage(
+    titlePanel("Sales Reports"),
+    
+    # Dislpay the subtitle computed on the server
+    fluidRow(div(class="span12", h3(textOutput("subtitle")))),
+    
+    # Show the plot of sales
+    fluidRow(div(class="span12", plotOutput("salesPlot"))),
+    
+    # Show the datatable of all sales
+    fluidRow(div(class="span12", dataTableOutput("salesTbl")))
   )
-))
+)
