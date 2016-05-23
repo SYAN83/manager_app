@@ -23,5 +23,5 @@ shinyServer(function(input, output, session) {
     }
   })
   observe(print(isAdmin()))
-  output$user <- renderText(userData())
+  output$user <- renderText(user())
 })
